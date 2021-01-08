@@ -1,0 +1,35 @@
+/* color variables */
+$color-black: #000000;
+$color-aqua: #8de0c6;
+$color-yellow: #fff8be;
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    padding: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: $color-black;
+    color: $color-yellow;
+
+
+    .title{
+        font-size: large;
+    }
+
+    .nav-links{
+        display: flex;
+        padding: inherit;
+        .home, .saved{
+            padding-left: 20px;
+            vertical-align: center;
+            text-decoration: none;
+            color: $color-yellow;
+            font-size: large;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
