@@ -1,0 +1,37 @@
+/* color variables */
+$color-black: #000000;
+$color-aqua: #8de0c6;
+$color-yellow: #fff8be;
+
+.search-bar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 25px;
+}
+
+input[type="text"]{
+    width: 50%;
+}
+
+input[type="submit"] {
+    padding: 5px;
+    background-color: $color-aqua;
+    color: $color-yellow;
+    border: 1px solid $color-aqua;
+    border-radius: 2pc;
+    width: 80px;
+    margin-left: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+
+input[type="submit"]:hover {
+    background-color: $color-black;
+    color: $color-yellow;
+    border-color: $color-black;
+  }

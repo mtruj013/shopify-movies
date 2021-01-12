@@ -68,7 +68,14 @@ const App = () => {
           <SavedList />
         </Route>
       </Switch>
-      <Search search={search} />
+      <h2 className="title">Find your favorite movies using the search bar and nominate them for a chance to win a Shoppie award!</h2>
+      <h3 className="title2">
+        See and edit your nomiations <span>here</span>!
+      </h3>
+      <div className="search">
+
+        <Search search={search} />
+      </div>
 
       <div className="movies">
         {loading && !error ? (

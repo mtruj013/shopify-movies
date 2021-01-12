@@ -1,0 +1,30 @@
+$color-black: #000000;
+$color-aqua: #8de0c6;
+$color-yellow: #fff8be;
+
+.App {
+    text-align: center;
+}
+
+.movies{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row wrap;
+    justify-content: space-around;
+}
+
+.title{
+    font-family: 'Josefin Sans', sans-serif;
+    padding-top: 15px;
+}
+
+.title2{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 500;
+
+    span{
+        text-decoration: underline;
+        text-decoration-color: $color-yellow;
+        text-decoration-thickness: 8px;
+    }
+}
