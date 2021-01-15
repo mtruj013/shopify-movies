@@ -34,7 +34,7 @@ const App = () => {
     });
 
     axios
-      .get(`http://www.omdbapi.com/?s=${searchVal}&apikey=305cb4a6`)
+      .get(`https://www.omdbapi.com/?s=${searchVal}&apikey=305cb4a6`)
       .then(res => {
         if (res.data.Response === "True") {
           dispatch({
