@@ -18,7 +18,7 @@ const Container = (props) => {
 
     return (
         <div className="container">
-            {nominees.length == 5 ? (
+            {nominees.length === 5 ? (
                 <div className="limit-reached">
                     <h1>You have reached your nomination limit</h1>
                 </div>
