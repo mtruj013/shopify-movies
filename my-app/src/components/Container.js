@@ -1,8 +1,50 @@
 import React from 'react';
+import Movie from '../components/Movie';
+import Search from '../components/Search';
+import Loader from 'react-loader-spinner';
+import NominateButton from '../components/NominateButton';
 
-const Container = () => {
+
+
+const Container = (props) => {
+    // props passed need to be movie, addNominee, nominateBuytton(maybe)
+    const search = props.search;
+    const movies = props.movies;
+    const error = props.error;
+    const loading = props.loading;
+    const addNominee = props.addNominee;
+    const nominees = props.nominees;
+    
+
     return (
-        <div></div>
+        <div className="container">
+            {nominees.length == 5 ? (
+                <div className="limit-reached">
+                    <h1>You have reached your nomination limit</h1>
+                </div>
+            ): "continue"}
+            
+            <h2 className="title">Find your favorite movies using the search bar and nominate them for a chance to win a Shoppie award!</h2>
+            <h3 className="title2">
+                See and edit your nomiations <span>here</span>!</h3>
+            <div className="search">
+                <Search search={search} />
+            </div>
+
+            <div className="movies">
+                {loading && !error ? (
+                    <Loader />
+                ) : error ? (
+                    <div className="error-msg">
+                        {error}
+                    </div>
+                ) : (
+                    movies.map((movie, index) => (
+                        <Movie key={`${index}-${movie.Title}`} movie={movie} addNominee={addNominee} nominateButton={NominateButton} />
+                    ))
+                )}
+            </div>
+        </div>
     )
 }
 
