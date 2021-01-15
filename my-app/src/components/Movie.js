@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../styles/MovieCard.scss';
 
-const Movie = ({movie}) => {
-
+const Movie = (props) => {
+    const movie = props.movie;
+ 
+    const NominateButton = props.nominateButton;
 
     return (
         <div className="movie-wrapper">
@@ -20,8 +22,8 @@ const Movie = ({movie}) => {
                 </p>
 
             </div>
-            <div className="nominate-button">
-                Nominate
+            <div onClick={() => props.addNominee(movie)}>
+                <NominateButton text="Nominate"/>
             </div>
         </div>
     )
