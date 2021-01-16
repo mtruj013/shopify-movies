@@ -3,7 +3,7 @@ import '../styles/MovieCard.scss';
 
 const Movie = (props) => {
     const movie = props.movie;
- 
+    const addNominee = props.addNominee;
     const NominateButton = props.nominateButton;
 
     return (
@@ -22,7 +22,7 @@ const Movie = (props) => {
                 </p>
 
             </div>
-            <div onClick={() => props.addNominee(movie)}>
+            <div onClick={() => addNominee(movie)}>
                 <NominateButton text="Nominate"/>
             </div>
         </div>
