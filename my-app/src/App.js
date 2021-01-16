@@ -64,6 +64,14 @@ const App = () => {
     console.log(nominees)
   }
 
+  // deleting a nominee
+  const removeNominee = (movie) => {
+    const newNomineeList = nominees.filter(
+      (nominee) => nominee.imdbID !== movie.imdbID 
+    )
+    setNominees(newNomineeList)
+  }
+
 
   return (
     <div className="App">
@@ -81,7 +89,7 @@ const App = () => {
             <h1>No nominees yet! Click 'Nominate' to add them!</h1>
           ) : (
                 nominees.map((nominee, index) => (
-                  <SavedList key={`${index}-${nominee.Title}`} movie={nominee} />
+                  <SavedList key={`${index}-${nominee.Title}`} movie={nominee} removeNominee={removeNominee}/>
                 ))
               )}
               </div>
