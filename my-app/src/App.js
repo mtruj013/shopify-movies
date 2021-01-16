@@ -59,7 +59,7 @@ const App = () => {
 
   const addNominee = (nominee) => {
     const newNominee = [...nominees, nominee]
-    if (nominees.length < 5) {
+    if (nominees.length < 5 && !nominees.includes(nominee)) {
       setNominees(newNominee)
     }
   }
