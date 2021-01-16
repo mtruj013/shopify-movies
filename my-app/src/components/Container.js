@@ -41,7 +41,7 @@ const Container = (props) => {
                     </div>
                 ) : (
                     movies.map((movie, index) => (
-                        <Movie key={`${index}-${movie.Title}`} movie={movie} addNominee={addNominee} nominateButton={NominateButton} />
+                        <Movie key={`${index}-${movie.Title}`} movie={movie} nominees={nominees} addNominee={addNominee} nominateButton={NominateButton} />
                     ))
                 )}
             </div>
