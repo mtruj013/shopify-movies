@@ -1,12 +1,13 @@
 import React from 'react';
 import '../styles/MovieCard.scss';
+import '../styles/SavedList.scss';
 import NominateButton from './NominateButton';
 
 const SavedList = (props) => {
     const movie = props.movie;
     const removeNominee = props.removeNominee;
     return (
-        // <div className="saved-container">
+        <div className="saved-container">
             <div className="movie-wrapper">
                 <div className="movie-card">
                     <h2>{movie.Title}</h2>
@@ -24,7 +25,7 @@ const SavedList = (props) => {
                 </div>
                 <div className="delete" onClick={() => removeNominee(movie)}> <NominateButton text="Remove"/></div>
             </div>
-        // </div>
+        </div>
     )
 }
 

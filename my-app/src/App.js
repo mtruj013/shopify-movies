@@ -5,6 +5,7 @@ import './App.scss';
 import NavBar from './components/NavBar';
 import SavedList from './components/SavedList';
 import Container from './components/Container';
+import LimitBanner from './components/LimitBanner';
 import { initialState, reducer } from './store/store';
 
 
@@ -85,7 +86,7 @@ const App = () => {
         <Route path='/saved'>
         <div className="saved">
           {nominees.length < 1 ? (
-            <h1>No nominees yet! Click 'Nominate' to add them!</h1>
+            <LimitBanner text="You have no nominees yet! CLick 'Nominate' to add them"/>
           ) : (
                 nominees.map((nominee, index) => (
                   <SavedList key={`${index}-${nominee.Title}`} movie={nominee} removeNominee={removeNominee}/>
