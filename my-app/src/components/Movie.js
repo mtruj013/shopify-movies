@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../styles/MovieCard.scss';
 
 const Movie = (props) => {
     const movie = props.movie;
     const addNominee = props.addNominee;
     const NominateButton = props.nominateButton;
+    const nominees = props.nominees;
 
     return (
         <div className="movie-wrapper">
@@ -22,7 +23,10 @@ const Movie = (props) => {
                 </p>
 
             </div>
-            <div onClick={() => addNominee(movie)}>
+            
+            <div 
+            onClick={() => addNominee(movie)} 
+            className={nominees.includes(movie) ? "button-disabled" : "add-button"}>
                 <NominateButton text="Nominate"/>
             </div>
         </div>

@@ -27,7 +27,6 @@ $color-yellow: #fff8be;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     font-weight: 500;
-    
 }
 
 .nominate-button{
@@ -41,4 +40,10 @@ $color-yellow: #fff8be;
     border: white solid;
     border-radius: 2pc;
     cursor: pointer;
+}
+
+.button-disabled{
+    div{
+        cursor: not-allowed;
+    }
 }
