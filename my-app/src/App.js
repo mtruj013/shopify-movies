@@ -16,7 +16,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get(`https://www.omdbapi.com/?s=man&apikey=305cb4a6`)
+      .get(`https://www.omdbapi.com/?s=man&type=movie&apikey=305cb4a6`)
       .then(res => {
         dispatch({
           type: "SEARCH_MOVIES_SUCCESS",
@@ -34,7 +34,7 @@ const App = () => {
     });
 
     axios
-      .get(`https://www.omdbapi.com/?s=${searchVal}&apikey=305cb4a6`)
+      .get(`https://www.omdbapi.com/?s=${searchVal}&type=movie&apikey=305cb4a6`)
       .then(res => {
         if (res.data.Response === "True") {
           dispatch({
@@ -61,7 +61,6 @@ const App = () => {
     if (nominees.length < 5) {
       setNominees(newNominee)
     }
-    console.log(nominees)
   }
 
   // deleting a nominee
