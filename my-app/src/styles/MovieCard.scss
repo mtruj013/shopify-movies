@@ -44,6 +44,7 @@ $color-yellow: #fff8be;
 
 .button-disabled{
     div{
-        cursor: not-allowed;
+        background-color: grey;
+        cursor: initial;
     }
 }
