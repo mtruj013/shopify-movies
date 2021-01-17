@@ -27,7 +27,7 @@ const Container = (props) => {
             
             
             <h3 className="title2">
-                See and edit your nomiations <span>here</span>!</h3>
+                See and edit your nominations <span>here</span>!</h3>
             <div className="search">
                 <Search search={search} />
             </div>
