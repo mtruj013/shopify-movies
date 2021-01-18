@@ -53,23 +53,46 @@ const App = () => {
 
   const { movies, error, loading } = state;
 
+  const [nominees, setNominees] = useState([])
+
+  //save data to local storage
+  useEffect(() => {
+    const savedNominees = JSON.parse(
+      localStorage.getItem('shopify-movies-nominees')
+    );
+
+    if (savedNominees) {
+      setNominees(savedNominees)
+    }
+  }, [])
 
   // adding a nominee
-  const [nominees, setNominees] = useState([])
+  const findDuplicate = (movie) => {
+    return nominees.some(nominee => nominee.Title === movie.Title)
+  }
 
   const addNominee = (nominee) => {
     const newNominee = [...nominees, nominee]
-    if (nominees.length < 5 && !nominees.includes(nominee)) {
+    // console.log(findDuplicate(nominee))
+    if (nominees.length < 5 && findDuplicate(nominee) === false) {
       setNominees(newNominee)
+      saveToLocalStorage(newNominee)
     }
   }
 
   // deleting a nominee
   const removeNominee = (movie) => {
     const newNomineeList = nominees.filter(
-      (nominee) => nominee.imdbID !== movie.imdbID 
+      (nominee) => nominee.imdbID !== movie.imdbID
     )
     setNominees(newNomineeList)
+    saveToLocalStorage(newNomineeList)
+  }
+
+
+
+  const saveToLocalStorage = (nominees) => {
+    localStorage.setItem('shopify-movies-nominees', JSON.stringify(nominees))
   }
 
 
@@ -80,19 +103,19 @@ const App = () => {
       </header>
       <Switch>
         <Route exact path='/'>
-          <Container search={search} movies={movies} error={error} loading={loading} nominees={nominees} addNominee={addNominee} />
+          <Container search={search} movies={movies} error={error} loading={loading} nominees={nominees} findDuplicate={findDuplicate} addNominee={addNominee} />
 
         </Route>
         <Route path='/saved'>
-        <div className="saved">
-          {nominees.length < 1 ? (
-            <LimitBanner text="You have no nominees yet! CLick 'Nominate' to add them"/>
-          ) : (
+          <div className="saved">
+            {nominees.length < 1 ? (
+              <LimitBanner text="You have no nominees yet! CLick 'Nominate' to add them" />
+            ) : (
                 nominees.map((nominee, index) => (
-                  <SavedList key={`${index}-${nominee.Title}`} movie={nominee} removeNominee={removeNominee}/>
+                  <SavedList key={`${index}-${nominee.Title}`} movie={nominee} removeNominee={removeNominee} />
                 ))
               )}
-              </div>
+          </div>
         </Route>
       </Switch>
     </div>
