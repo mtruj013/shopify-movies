@@ -15,7 +15,7 @@ const NavBar = () => {
             </NavLink>
 
                 <NavLink className="saved" to="/saved">
-                    SAVED MOVIES
+                    NOMINATED MOVIES
             </NavLink>
             </div>
 
