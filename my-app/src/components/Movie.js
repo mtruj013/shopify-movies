@@ -5,7 +5,7 @@ const Movie = (props) => {
     const movie = props.movie;
     const addNominee = props.addNominee;
     const NominateButton = props.nominateButton;
-    const nominees = props.nominees;
+    const findDuplicate = props.findDuplicate;
 
     return (
         <div className="movie-wrapper">
@@ -26,7 +26,7 @@ const Movie = (props) => {
             
             <div 
             onClick={() => addNominee(movie)} 
-            className={nominees.includes(movie) ? "button-disabled" : "add-button"}>
+            className={findDuplicate(movie) === true ? "button-disabled" : "add-button"}>
                 <NominateButton text="Nominate"/>
             </div>
         </div>
