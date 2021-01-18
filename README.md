@@ -8,13 +8,11 @@ Deployed site: https://theshoppieawards.netlify.app/
 # Usage
 
 Search for your favorite movies and nominate (up to 5) to win a coveted Shoppie award! Click 'Nominated Movies' to view or edit your choices. 
-
 <br>
 
 # API
 
 http://www.omdbapi.com/
-
 <br>
 
 # Built with
