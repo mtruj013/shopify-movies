@@ -8,7 +8,6 @@ import LimitBanner from './LimitBanner';
 
 
 const Container = (props) => {
-    // props passed need to be movie, addNominee, nominateBuytton(maybe)
     const search = props.search;
     const movies = props.movies;
     const error = props.error;

@@ -73,7 +73,7 @@ const App = () => {
 
   const addNominee = (nominee) => {
     const newNominee = [...nominees, nominee]
-    // console.log(findDuplicate(nominee))
+
     if (nominees.length < 5 && findDuplicate(nominee) === false) {
       setNominees(newNominee)
       saveToLocalStorage(newNominee)
